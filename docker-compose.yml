@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  # Serwis 1: Nasza aplikacja Pythonowa
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    networks:
+      - lab-network
+    depends_on:
+      - redis
+
+  # Serwis 2: Baza danych Redis
+  redis:
+    image: "redis:alpine"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge
