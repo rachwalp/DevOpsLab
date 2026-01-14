@@ -19,7 +19,7 @@ def hello():
         except redis.exceptions.ConnectionError:
             count = "błąd połączenia z Redis"
             
-    return f"Witaj w Laboratorium DevOps! Liczba odwiedzin: {count}\n"
+    return f"Witaj! Liczba odwiedzin: {count}\n"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
